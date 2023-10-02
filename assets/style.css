@@ -1,0 +1,49 @@
+.image-slider{
+    display: flex;
+    width: 500px;
+    position: relative;
+    height: 500px;
+}
+
+.image-button{
+    position: relative;
+    
+}
+
+.buttons{
+    position: absolute;
+    z-index: 1;
+	top: 65%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+.image{
+    transition: all .5s;
+    opacity: 1;
+    position: absolute;
+    width: 300px;
+    top: 30%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+   
+}
+
+.nav-circles-container{
+    display: flex;
+    width: 100px;
+    justify-content: space-evenly;
+}
+
+.nav-circle{
+    width: 10px;
+    height: 10px;
+    border-radius: 100px;
+    background-color: blueviolet;
+   
+}
+
+.hidden{
+    opacity: 0;
+    transform: rotate(180deg);
+}
+
