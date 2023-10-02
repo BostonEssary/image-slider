@@ -20,6 +20,21 @@ images.forEach((image) => {
 
 navCircles[0].classList.add("active")
 
+function getChildElementIndex(node) {
+    return Array.prototype.indexOf.call(node.parentNode.children, node);
+  }
+
+navCircles.forEach((circle) =>{
+    circle.addEventListener("click", () => {
+        const clickedImage = images[getChildElementIndex(circle)]
+        images.forEach((image) => {
+            image.classList.add("hidden")
+        })
+        clickedImage.classList.remove("hidden")
+        counter = images[getChildElementIndex(circle)]
+    } )
+})
+
 function handleTimeout(){
     if(counter >= images.length - 1){
         images[counter].classList.add("hidden")
