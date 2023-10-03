@@ -30,8 +30,14 @@ navCircles.forEach((circle) =>{
         images.forEach((image) => {
             image.classList.add("hidden")
         })
+        navCircles.forEach((newCircle) => {
+            newCircle.classList.remove("active")
+        })
+        circle.classList.add("active")
         clickedImage.classList.remove("hidden")
-        counter = images[getChildElementIndex(circle)]
+        counter = getChildElementIndex(circle)
+        clearInterval(timer)
+        setInterval(handleTimeout, 5000)
     } )
 })
 
@@ -44,6 +50,7 @@ function handleTimeout(){
         navCircles[counter].classList.add("active")
     }
     else{
+        console.log(counter)
         images[counter].classList.add("hidden")
         navCircles[counter].classList.remove("active")
         counter++
